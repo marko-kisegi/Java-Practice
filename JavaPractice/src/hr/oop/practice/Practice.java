@@ -6,7 +6,7 @@ package hr.oop.practice;
 import java.util.Scanner;
 
 /**
- * @author Korisnik
+ * @author Sui146
  *
  */
 public class Practice {

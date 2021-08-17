@@ -14,7 +14,7 @@ public class PracticeLambda {
 	}
 	public static void Hello(Double n) {
 		Double a = Math.pow(n, 2);
-		System.out.println(n + " " + a );
+		System.out.format("%.0f %.0f \n", n, a);
 	}
 
 }

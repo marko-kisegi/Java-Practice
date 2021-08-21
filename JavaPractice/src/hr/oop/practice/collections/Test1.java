@@ -1,4 +1,4 @@
-package hr.oop.practice;
+package hr.oop.practice.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;

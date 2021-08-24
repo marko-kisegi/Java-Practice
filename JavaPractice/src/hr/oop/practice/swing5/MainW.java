@@ -35,14 +35,30 @@ public class MainW extends JFrame{
 		msg.setBounds(0, 0, 100, 100);
 		msg.setBorder(new fullBorder(5, Color.RED));
 		Message msg2 = new Message();
-		msg2.setBounds(35, 45 , 90, 75);
+		msg2.setBounds(35, 35 , 90, 75);
 		msg2.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));
 		Message msg3 = new Message();
-		msg3.setBounds(75, 75, 100, 100);
+		msg3.setBounds(70, 70, 100, 100);
 		msg3.setBorder(BorderFactory.createDashedBorder(Color.BLACK));
-		cp.add(msg2);
+		Message msg4 = new Message();
+		msg4.setBounds(105, 105 , 100, 75);
+		msg4.setBorder(BorderFactory.createLineBorder(Color.PINK));
+		Message msg5 = new Message();
+		msg5.setBounds(140, 140 , 90, 75);
+		msg5.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5, true));		
+		Message msg6 = new Message();
+		msg4.setBounds(105, 105 , 100, 75);
+		msg4.setBorder(BorderFactory.createTitledBorder( BorderFactory.createLineBorder(Color.BLUE, 5, true)));
+		Message msg7 = new Message();
+		msg5.setBounds(140, 140 , 90, 75);
+		msg5.setBorder(BorderFactory.createTitledBorder((BorderFactory.createLineBorder(Color.PINK)), "Fish"));
 		cp.add(msg);
+		cp.add(msg2);
 		cp.add(msg3);
+		cp.add(msg4);
+		cp.add(msg5);
+		cp.add(msg6);
+		cp.add(msg7);
 	}
 	
 	private static class Message extends JComponent{

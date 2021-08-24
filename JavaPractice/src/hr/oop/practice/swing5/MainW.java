@@ -47,11 +47,11 @@ public class MainW extends JFrame{
 		msg5.setBounds(140, 140 , 90, 75);
 		msg5.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5, true));		
 		Message msg6 = new Message();
-		msg4.setBounds(105, 105 , 100, 75);
-		msg4.setBorder(BorderFactory.createTitledBorder( BorderFactory.createLineBorder(Color.BLUE, 5, true)));
+		msg6.setBounds(175, 175 , 100, 75);
+		msg6.setBorder(BorderFactory.createTitledBorder( BorderFactory.createLineBorder(Color.BLUE, 5, true)));
 		Message msg7 = new Message();
-		msg5.setBounds(140, 140 , 90, 75);
-		msg5.setBorder(BorderFactory.createTitledBorder((BorderFactory.createLineBorder(Color.PINK)), "Fish"));
+		msg7.setBounds(210, 210 , 90, 75);
+		msg7.setBorder(BorderFactory.createTitledBorder((BorderFactory.createLineBorder(Color.PINK)), "Fish"));
 		cp.add(msg);
 		cp.add(msg2);
 		cp.add(msg3);

@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Insets;
 
@@ -40,31 +41,61 @@ public class MainW extends JFrame{
 		Container cp = getContentPane();
 		cp.setLayout(null);
 		
-		Message msg1 = new Message(Color.orange);
+		Message msg1 = new Message(Color.ORANGE, "Hello");
 		msg1.setBounds(0, 0, 130, 100);
 		msg1.setBorder(new fullBorder(5, Color.red));
 		msg1.setOpaque(true);
 		msg1.setForeground(Color.black);
 		msg1.setBackground(Color.blue);
-		cp.add(msg1);
 		
-		Message msg2 = new Message(Color.orange);
+		Message msg2 = new Message(Color.ORANGE, "Hello in spanish");
 		msg2.setBounds(140, 0 , 130, 100);
 		msg2.setBorder(new fullBorder(5, Color.red));
 		msg2.setOpaque(false);
 		msg2.setForeground(Color.black);
 		msg2.setBackground(Color.blue);
+		
+		Message msg3 = new Message(Color.ORANGE, "Hello");
+		msg3.setBounds(140, 140, 130, 100);
+		msg3.setBorder(new fullBorder(5, Color.red));
+		msg3.setOpaque(true);
+		msg3.setForeground(Color.black);
+		msg3.setBackground(Color.blue);
+		
+		Message msg4 = new Message(Color.ORANGE, "Hello in spanish");
+		msg4.setBounds(0, 140 , 130, 100);
+		msg4.setBorder(new fullBorder(5, Color.red));
+		msg4.setOpaque(false);
+		msg4.setForeground(Color.black);
+		msg4.setBackground(Color.blue);
+		
+		cp.add(msg1);
 		cp.add(msg2);
+		cp.add(msg3);
+		cp.add(msg4);
 	}
 	private static class Message extends JComponent{
 
-		/**
-		 * 
-		 */
 		private static final long serialVersionUID = 1L;
-		private Color circleColor;
+		private Color color;
+		private String text;
 		public Message(Color color) {
-			this.circleColor = color;
+			super();
+			this.color = color;
+		}
+		public Message(Color color, String text) {
+			super();
+			this.text = text;
+			this.color = color;
+		}
+		
+		public void setCircleColor(Color color) {
+			this.color = color;
+			repaint();
+		}
+		
+		public void setText(String text) {
+			this.text = text;
 		}
 		protected void paintComponent(Graphics g) {
 			Dimension size = getSize();
@@ -72,8 +103,19 @@ public class MainW extends JFrame{
 				g.setColor(getBackground());
 				g.fillRect(0, 0, size.width, size.height);
 			}
-			g.setColor(circleColor);
+			g.setColor(color);
 			g.fillOval(0,  0 , size.width, size.height);
+			Insets ins = getInsets();
+			int x0 = ins.left;
+			int y0 = ins.top;
+			int width = size.width - ins.left - ins.right;
+			int height = size.height - ins.top - ins.bottom;
+
+			FontMetrics fm = g.getFontMetrics();
+			g.setColor(getForeground());
+			g.drawString(text, 
+					x0+(width-fm.stringWidth(text))/2, 
+					y0+height-(height-fm.getAscent())/2);
 		}
 	}
 		
